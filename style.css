@@ -1,4 +1,4 @@
-Загрузка более ранних сообщений…:root {
+:root {
     --green: #294b3a;
     --green2: #476c51;
     --sage: #dce5d7;
@@ -586,6 +586,256 @@ header {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px
 }
+
+.article {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    background: white
+}
+
+.article img {
+    height: 190px;
+    width: 100%
+}
+
+.article-content {
+    padding: 23px
+}
+
+.article-content p {
+    font-size: .94rem
+}
+
+.text-link {
+    font-weight: 800;
+    color: var(--green);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 3px
+}
+
+details {
+    border-top: 1px solid var(--line);
+    padding: 17px 0
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--green)
+}
+
+details p {
+    margin: 12px 0 0
+}
+
+.contact {
+    background: var(--green);
+    color: white
+}
+
+.contact h2,
+.contact h3 {
+    color: white
+}
+
+.contact p {
+    color: #dbe5d9
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 55px
+}
+
+.contact-panel {
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: var(--radius);
+    padding: 28px;
+    background: rgba(255, 255, 255, .05)
+}
+
+.contact-panel p {
+    margin-bottom: 10px
+}
+
+footer {
+    background: #1c3428;
+    color: #dbe5d9;
+    padding: 25px 0;
+    font-size: .85rem
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap
+}
+
+.small {
+    font-size: .82rem
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .65s ease, transform .65s ease
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+@media(max-width:900px) {
+
+    .hero-grid,
+    .about-grid,
+    .results-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px
+    }
+
+    .hero-image,
+    .hero-image img {
+        height: 460px;
+        min-height: 460px
+    }
+
+    .about-visual img {
+        height: 360px
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .nav-links {
+        gap: 14px
+    }
+}
+
+@media(max-width:650px) {
+    .container {
+        width: min(100% - 28px, 1160px)
+    }
+
+    section {
+        padding: 68px 0
+    }
+
+    .nav {
+        height: 68px
+    }
+
+    .menu-btn {
+        display: block
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--paper);
+        padding: 18px 22px 24px;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0
+    }
+
+    .nav-links.open {
+        display: flex
+    }
+
+    .nav-links a {
+        padding: 11px 0;
+        border-bottom: 1px solid var(--line)
+    }
+
+    .hero {
+        padding: 25px 0 48px
+    }
+
+    .hero-grid {
+        gap: 20px
+    }
+
+    .hero-copy {
+        padding: 15px 0
+    }
+
+    h1 {
+        font-size: clamp(2.7rem, 13vw, 4.5rem)
+    }
+
+    .hero-image,
+    .hero-image img {
+        height: 370px;
+        min-height: 370px
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px
+    }
+
+    .stat {
+        padding: 8px 10px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    .stat strong {
+        font-size: 1.8rem
+    }
+
+    .cards,
+    .safety-grid,
+    .article-grid {
+        grid-template-columns: 1fr
+    }
+
+    .blend-card img {
+        height: 220px
+    }
+
+    .tasting {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px
+    }
+
+    .contact-grid {
+        gap: 25px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
         transition: none
     }
+
+    .bar-fill {
+        transition: none
+    }
+}
 }
